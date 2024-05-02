@@ -11,7 +11,7 @@
       apt_repository:
         repo='ppa:deadsnakes/ppa'
     - name: make sure required packages are installed
-      apt: pkg=nginx,git,python3,python3-venv state=present
+      apt: pkg=nginx,git,python3.11,python3.11-venv state=present
 
 
 
@@ -23,7 +23,7 @@
 
     - name: Install dependencies
       pip:
-        requirements : /home/{{ ansible_user }}/sites/{{ host }}/requirements.txt
+        requirements: /home/{{ ansible_user }}/sites/{{ host }}/requirements.txt
         virtualenv: /home/{{ ansible_user }}/sites/{{ host }}/venv
         
 
@@ -34,8 +34,6 @@
         virtualenv: "/home/{{ ansible_user }}/sites/{{ host }}/venv"
       tags:
         migr
-
-
       
     - name: Add nginx config to sites-available
       template:
