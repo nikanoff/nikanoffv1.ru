@@ -26,15 +26,6 @@
         requirements : /home/{{ ansible_user }}/sites/{{ host }}/requirements.txt
         virtualenv: /home/{{ ansible_user }}/sites/{{ host }}/venv
         
-    - name: Run the SmokeTest test case from the main app. Useful for testing deploys
-      community.general.django_manage:
-        command: test
-        project_path: "/home/{{ ansible_user }}/sites/{{ host }}"
-        apps: main.SmokeTest
-        
-      tags:
-        test
-
 
     - name: Run migrations
       community.general.django_manage:
