@@ -11,7 +11,7 @@
       apt_repository:
         repo='ppa:deadsnakes/ppa'
     - name: make sure required packages are installed
-      apt: pkg=nginx,git,python3.11,python3.11-venv state=present
+      apt: pkg=nginx,git,python3,python3-venv state=present
 
 
 
@@ -25,7 +25,7 @@
       pip:
         requirements: /home/{{ ansible_user }}/sites/{{ host }}/requirements.txt
         virtualenv: /home/{{ ansible_user }}/sites/{{ host }}/venv
-        
+        virtualenv_command: 'python3 -m venv'        
 
     - name: Run migrations
       community.general.django_manage:
