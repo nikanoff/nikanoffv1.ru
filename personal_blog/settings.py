@@ -33,6 +33,7 @@ else:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
     ALLOWED_HOSTS = []
+    CSRF_TRUSTED_ORIGINS = ["https://nikanoff.ru", "http://nikanoff.ru"]
 
 
 

@@ -1,13 +1,46 @@
 server {
     listen 80;
-    server_name {{ host }};
-    
-    location /static {
-        alias /home/{{ansible_user}}/sites/{{ host }}/static;
-    }
+    listen [::]:80;
+    server_name {{ host }} www.{{ host }};
+    return 301 https://{{ host }}$request_uri;
+}
 
-    location / {
-        proxy_pass http://unix:/tmp/{{ host }}.socket;
-        proxy_set_header Host $host;
-    }
+server {
+
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    ssl_certificate /etc/ssl/nikanoff.crt;
+    ssl_certificate_key /etc/ssl/nikanoff.key;
+
+	server_name www.{{ host }};
+	return 301 https://{{ host }}$request_uri;
+}
+
+server {
+
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    #root /var/www/html;
+    #index index.html index.htm index.nginx-debian.html;
+
+    server_name {{ host }};
+
+	ssl_certificate /etc/ssl/nikanoff.crt;
+	ssl_certificate_key /etc/ssl/nikanoff.key;
+
+	location / {
+		proxy_pass http://unix:/tmp/{{ host }}.socket;
+		proxy_set_header Host $host;
+        #proxy_set_header X-Forwarded-Host $server_name;
+	    #proxy_set_header X-Real-IP $remote_addr;
+	}
+
+	location /static {
+		alias /home/{{ansible_user}}/sites/{{ host }}/static;
+	}
+
+
+
 }
