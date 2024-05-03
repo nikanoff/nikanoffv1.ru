@@ -31,7 +31,7 @@ server {
 	ssl_certificate_key /etc/ssl/nikanoff.key;
 
 	location / {
-		proxy_pass https://unix:/tmp/{{ host }}.socket;
+		proxy_pass http://unix:/tmp/{{ host }}.socket;
 		proxy_set_header Host $host;
         #proxy_set_header X-Forwarded-Host $server_name;
 	    #proxy_set_header X-Real-IP $remote_addr;
