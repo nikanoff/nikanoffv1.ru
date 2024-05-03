@@ -24,13 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if "IS_DJANGO_DEBUG_FALSE" in os.environ:
-    DEBUG = False
+    DEBUG = True
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
     ALLOWED_HOSTS = [os.environ["SITENAME"]]
-    CSRF_TRUSTED_ORIGINS = [https://nikanoff.ru]
-    USE_X_FORWARDED_HOST = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    
+    CSRF_TRUSTED_ORIGINS = ["https://*.nikanoff.ru", "http://*.nikanoff.ru"]
     
     
 else:
