@@ -19,6 +19,7 @@
       ansible.builtin.git:
         repo: https://github.com/nikanoff/nikanoffv1.ru.git
         dest: /home/{{ ansible_user }}/sites/{{ host }}
+        #force: yes
         
 
 
