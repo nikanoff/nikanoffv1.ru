@@ -1,17 +1,15 @@
 html {
     position: relative;
     min-height: 100%;
-    background-color: #fff;
+    
 }
 
 
 body {
-    color: #333;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
     margin-bottom: 60px;
-    background-color: #fff;
-
+    
 }
 
 .page-header {
@@ -19,8 +17,19 @@ body {
     margin-left: -20px;
 }
 
-h1,
-h2,
+
+.article {
+    border: none;     
+    border-radius: 15px; 
+    padding-top: 1px;
+    padding-left: 18px;
+    padding-right: 10px;
+    padding-bottom: 0.1px;
+    margin-bottom: 30px;
+    
+}
+
+
 h3 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -31,7 +40,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
     font-size: 1.3em;
     font-weight: 750;
@@ -41,8 +50,7 @@ h3 {
     font-size: 1.1em;
 }
 
-h4,
-h5,
+
 h6 {
     font-size: 1em;
 }
@@ -55,6 +63,11 @@ h1.avatar-top {
     font-weight: 900;
 }
 
+h1.avatar-top a {
+    text-decoration: none;
+}
+
+
 /* тут картинка с Маратом */
 h1.avatar-top img {
     width: 32px;
@@ -65,10 +78,6 @@ h1.avatar-top img {
 
 
 
-.article {
-    /* border: 1px solid red; */
-    margin-bottom: 3em;
-}
 
 
 
@@ -79,12 +88,10 @@ h2.article-title {
 
 h2.article-title a {
     text-decoration: none;
-    color: #333;
 }
 
 h2.article-title a:hover {
     text-decoration: none;
-    color: #666;
 }
 
 .footer {
@@ -93,24 +100,10 @@ h2.article-title a:hover {
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8em;
     font-weight: 800;
-    color: #999;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -120,14 +113,11 @@ h2.article-title a:hover {
 
 .donate-button {
     /* Base styles */
-    background-color: #0140ff; /* Bright pink-crimson background color */
-    color: #FFFFFF; /* White text color */
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     
 
     /* 3D illusion */
@@ -143,7 +133,6 @@ h2.article-title a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #FFFFFF;
     opacity: 0;
     transition: opacity 0.2s;
     border-radius: 5px;
@@ -153,3 +142,77 @@ h2.article-title a:hover {
     opacity: 0.2;
   }
   
+  label {
+    width:40px;
+    height:20px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    margin-top: -1.6em;
+    margin-left: 11em;
+    transition: 0.3s;
+  }
+
+  label:after {
+    content: "";
+    width:18px;
+    height: 18px;
+    position: absolute;
+    top:0.9px;
+    left:1.3px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius: 18px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  input:checked + label {
+    background: #242424;
+  }
+  input:checked + label:after {
+    left:39px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg,#777,#3a3a3a);
+  }
+  label, label:after {
+    transition: 0.3s
+  }
+
+  label:active:after{ 
+    width: 26px; 
+  }
+
+
+
+
+  label svg {
+    position: absolute;
+    width: 150px;
+    top:-25.6px;
+    z-index: 100;
+  }
+  label svg.sun {
+    position: absolute;
+    width: 16px;
+    left:2px;
+    transition: 0.3s;
+  }
+  label svg.moon {
+    position: absolute;
+    width: 12px;
+    left:25px;
+    transition: 0.3s;
+  }
+
+
+  .article-list {
+    display: grid;
+  }

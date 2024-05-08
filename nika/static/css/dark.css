@@ -1,0 +1,80 @@
+html {
+    background-color: #191a1a;
+    
+    
+}
+
+
+body {
+    color: #e8e8e6;
+    background-color: #191a1a;
+    
+    
+
+}
+
+h1.avatar-top a {
+    color: #e8e8e6;
+
+}
+
+h1.avatar-top a:hover {
+    color: #1fb8cd;
+    transition: 0.4s;
+
+}
+
+
+h2.article-title a {
+
+    color: #f4f4f4;
+}
+
+h2.article-title a:hover {
+
+    color: #6b6b6b;
+}
+
+.footer {
+
+    background-color: #333333;
+    color: #f4f4f4;
+    
+    
+}
+
+/*donate button */
+
+.donate-button {
+    /* Base styles */
+    background-color: #0140ff; /* Bright pink-crimson background color */
+    color: #FFFFFF; /* White text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  }
+  
+  /* Add a subtle glow effect */
+  .donate-button::after {
+
+    background-color: #FFFFFF;
+
+  }
+ 
+  
+  label svg.sun {
+        
+    fill:#fff;
+    
+  }
+  label svg.moon {
+    
+    fill:#7e7e7e;
+    
+  }
+
+
+  .article {
+    background-color: #1d1f21; 
+    transition: 0.5s;
+    
+}

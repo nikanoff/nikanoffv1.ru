@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Article
 
+
+
 # Create your views here.
 def index(request):
     articles = Article.objects.all()
@@ -11,3 +13,26 @@ def article_page(request, slug):
     article = Article.objects.get(slug=slug)
     context = {"article": article}
     return render(request, "article_page.html", context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

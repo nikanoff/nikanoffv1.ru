@@ -1,0 +1,66 @@
+html {
+    background-color: #f4f4f4;
+    
+}
+
+
+body {
+    color: #333;
+    background-color: #f4f4f4;
+    
+    
+
+}
+
+h1.avatar-top a {
+    color: black;
+
+}
+
+
+
+
+h2.article-title a {
+
+    color: #333;
+}
+
+h2.article-title a:hover {
+
+    color: #666;
+}
+
+.footer {
+
+    background-color: #fff;
+    color: #999;
+    
+}
+
+/*donate button */
+
+.donate-button {
+    /* Base styles */
+    background-color: #0140ff; /* Bright pink-crimson background color */
+    color: #FFFFFF; /* White text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+  
+  /* Add a subtle glow effect */
+  .donate-button::after {
+
+    background-color: #FFFFFF;
+
+}
+  
+label svg.sun {
+        
+    fill:#fff;
+    
+  }
+  label svg.moon {
+    
+    fill:#7e7e7e;
+    
+  }

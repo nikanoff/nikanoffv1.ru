@@ -24,3 +24,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('blog/<slug:slug>', views.article_page, name="article_page"),
 ]
+
+
