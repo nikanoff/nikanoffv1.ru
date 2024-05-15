@@ -15,7 +15,8 @@
                         </h2> -->
                         <p class="article-summary">{{ article.summary }}</p>
                     </a>
-                    <div class="socials">{{ article.pubdate }}   {{ article.views }}                    
+                    <div class="socials">{{ article.pubdate }} {{ article.view_count_text }}
+                  
                         <button class="copy-btn" data-url="{{ article.get_absolute_url }}">
                             <img width="20" height="20" src="{% static 'img/copy-icon.png' %}" alt="Copy" class="copy-icon">
                             <img width="22" height="22" src="https://img.icons8.com/color/64/tiktok-verified-account.png" alt="Checkmark" class="checkmark-icon" style="display: none;">
