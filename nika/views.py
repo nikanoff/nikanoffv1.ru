@@ -7,12 +7,13 @@ from .models import Article,Ip
 
 # Метод для получения айпи
 def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
+    x_real_ip = request.META.get('HTTP_X_REAL_IP')
+    if x_real_ip:
+        ip = x_real_ip
     else:
-        ip = request.META.get('REMOTE_ADDR') # В REMOTE_ADDR значение айпи пользователя
+        ip = request.META.get('REMOTE_ADDR')
     return ip
+
 
 def index(request):
     articles = Article.objects.all()

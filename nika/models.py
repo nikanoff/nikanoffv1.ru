@@ -17,7 +17,7 @@ class Article(models.Model):
     category = models.CharField(max_length=255)
     pubdate = models.DateTimeField()
     slug = models.CharField(max_length=255, unique=True)
-    views = models.ManyToManyField(Ip, related_name="post_views", blank=True)
+    views = models.ManyToManyField(Ip, related_name="article_views", blank=True)
     
 
     def __str__(self):

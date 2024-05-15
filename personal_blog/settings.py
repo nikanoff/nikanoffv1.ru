@@ -27,14 +27,14 @@ if "IS_DJANGO_DEBUG_FALSE" in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
     ALLOWED_HOSTS = [os.environ["SITENAME"]]
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_REAL_IP', '127.0.0.1', 'HTTP_X_FORWARDED_PROTO', 'https')
     SESSION_COOKIE_SECURE = True
     
 else:
     SECRET_KEY = ["django-insecure-66=dw4_$(*jna4kpwo$%)3+$3g&_@xgcjp%cy)yaj+ni6((*fx"]
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = []
 
 
 
