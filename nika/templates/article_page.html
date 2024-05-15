@@ -4,28 +4,17 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 
-<!-- код,который генерит статью -->
+
 {% block content %}
-<div class="row">
-    <div class="col-md-12 col-lg-8">
-        <div class="article">
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-md-10 col-lg-8">
+        <div class="article1">
             <h1 class="article-title">{{ article.title }}</h1>
             <p class="article-text">{{ article.full_text | safe }}</p>
-
-                <!-- код,для кнопки донат -->
-            <form action="https://www.donationalerts.com/r/nikanoff" target="_blank" rel="noopener noreferrer">
-                <button class="donate-button">Donate</button>
-            </form>
-
-              
-
-
-
-
-
-            
+            <p>{{article.total_views}}</p>
         </div>
     </div>
 </div>
+
 {% endblock %}
 

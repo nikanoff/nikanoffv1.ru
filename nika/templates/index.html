@@ -4,18 +4,67 @@
 {% block title %}Сайт Марата Никанова{% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-12 col-lg-8">
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-10 col-lg-8">
             <div class="article-list">
                 {% for article in articles %}
-                    <div class="article"> 
-                        <h2 class="article-title">
+                    <a class="article" href="{{ article.get_absolute_url }}">
+                        <h2 class="article-title">{{article.title }}</h2>
+                        <!-- <h2 class="article-title">
                             <a href="{{ article.get_absolute_url }}">{{article.title }}</a> 
-                        </h2>
+                        </h2> -->
                         <p class="article-summary">{{ article.summary }}</p>
+                    </a>
+                    <div class="socials">{{ article.pubdate }}   {{ article.views }}                    
+                        <button class="copy-btn" data-url="{{ article.get_absolute_url }}">
+                            <img width="20" height="20" src="{% static 'img/copy-icon.png' %}" alt="Copy" class="copy-icon">
+                            <img width="22" height="22" src="https://img.icons8.com/color/64/tiktok-verified-account.png" alt="Checkmark" class="checkmark-icon" style="display: none;">
+                        </button>
                     </div>
+                     
                 {% endfor %}
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                copyUrl(url);
+                toggleCopyState(this);
+            });
+        });
+
+        function copyUrl(url) {
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    // URL copied successfully
+                })
+                .catch((error) => {
+                    console.error('Failed to copy URL:', error);
+                });
+        }
+
+
+
+        function toggleCopyState(button) {
+            const copyIcon = button.querySelector('.copy-icon');
+            const checkmarkIcon = button.querySelector('.checkmark-icon');
+
+            copyIcon.style.display = 'none';
+            checkmarkIcon.style.display = 'inline-block';
+
+            setTimeout(() => {
+                copyIcon.style.display = 'inline-block';
+                checkmarkIcon.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+
+    
+
+
+
+    
 {% endblock %}
