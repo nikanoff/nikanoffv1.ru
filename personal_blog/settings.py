@@ -27,7 +27,7 @@ if "IS_DJANGO_DEBUG_FALSE" in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
     ALLOWED_HOSTS = [os.environ["SITENAME"]]
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_REAL_IP', '127.0.0.1')
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SESSION_COOKIE_SECURE = True
     
 else:
