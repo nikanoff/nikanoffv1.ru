@@ -201,21 +201,12 @@ h2.article-title a:hover {
 
 .share-btn {
   display: flex;
-  align-items: center;
-  color: #007bff; /* Set text color */
+  align-items: center;  
   border: none;
   margin-right: 15px;
   border-radius: 10px;
   padding: 3px 10px;
-  cursor: pointer;
-  background-color: #202222;
-}
-
-.share-btn:hover {
-  background-color: #464646;
-  color: #ebebeb;
-  transition: 0.5s;
-
+  cursor: pointer;  
 }
 
 

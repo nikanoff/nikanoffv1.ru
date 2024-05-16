@@ -62,3 +62,8 @@ body {
     
 }
 
+.share-btn {
+    color: #007bff; /* Set text color */  
+    background-color: #e8e8e656;
+  }
+
