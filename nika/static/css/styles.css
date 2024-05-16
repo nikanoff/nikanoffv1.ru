@@ -137,21 +137,22 @@ label:active:after{
 }
 
 .socials {  
+  display: flex;
   margin-bottom: 35px;
   border-radius: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 0.7rem;
   padding-left: 15px;
-  
-
+  align-items: center;
+  justify-content: space-between;
 }
 
-.socials a {
+/* .socials a {
   margin-top: auto;
   margin-right: 15px;
   float: inline-end;
-}
+} */
 /* Свойства статей */
 
 
@@ -198,29 +199,37 @@ h2.article-title a:hover {
   
 }
 
-.copy-btn {
-  width: 20px;
-  height: 20px;      
-  border: none;
-  border-radius: 10px;
-  /* padding: 18px 18px; */
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: auto;
-  margin-right: 15px;
-  float: inline-end;
+.share-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  opacity: 80%;
+  color: #007bff; /* Set text color */
+  border: none;
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 3px 10px;
+  cursor: pointer;
+  background-color: #202222;
+}
+
+.share-btn:hover {
+  background-color: #464646;
+  color: #ebebeb;
+  transition: 0.5s;
+
+}
+
+
+.share {
+  width: 18px;
+  height: 18px;
+  margin-top: -1px;  
+  margin-left: -1px;
   
 }
-  
- /* .copy-btn:hover {
-  background-color: #0056b3;
-} */
-  
-.checkmark-icon {
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  margin-top: -3px;  
   display: none;
 }
-  

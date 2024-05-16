@@ -15,7 +15,7 @@ def get_client_ip(request):
     return ip
 
 def index(request):
-    articles = Article.objects.all()
+    articles = Article.objects.all().order_by('-id')
     
     for article in articles:
         article.view_count_text = get_view_count_text(article.view_count)
