@@ -8,16 +8,17 @@
         <div class="col-xs-12 col-md-10 col-lg-8">
             <div class="article-list">
                 {% for article in articles %}
-                    <a class="article" href="{{ article.get_absolute_url }}" hx-get="{{ article.get_absolute_url }}">
+                    <a class="article" href="{{ article.get_absolute_url }}">
                         <h2 class="article-title">{{article.title }}</h2>
                         <p class="article-summary">{{ article.summary }}</p>
                     </a>
                     <div class="socials">{{ article.view_count_text }} | {{ article.pubdate }}                  
-                        <button class="share-btn" onclick="copyUrl('{{ request.build_absolute_uri }}{{ article.get_absolute_url }}', this)">
+                        <button class="share-btn" onclick="copyUrl('{{ request.build_absolute_uri|slice:'1:' }}{{ article.get_absolute_url }}', this)">
                             <img class="share" src="{% static 'img/share-icon.png' %}" alt="Share">
                             <img class="checkmark" src="{% static 'img/checkmark-icon.png' %}" alt="Checkmark">
                             <span>Share</span>
                         </button>
+                        
                     </div>
                 {% endfor %}
             </div>
