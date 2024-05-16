@@ -14,7 +14,7 @@
                     </a>
                     <div class="socials">{{ article.view_count_text }} | {{ article.pubdate }}                  
                         <button class="share-btn" onclick="copyUrl('{{ request.build_absolute_uri|slice:'1:' }}{{ article.get_absolute_url }}', this)">
-                            <img class="share" src="{% static 'img/share-icon.png' %}" alt="Share1">
+                            <img class="share" src="{% static 'img/share-icon.png' %}" alt="Share">
                             <img class="checkmark" src="{% static 'img/checkmark-icon.png' %}" alt="Checkmark">
                             <span>Share</span>
                         </button>

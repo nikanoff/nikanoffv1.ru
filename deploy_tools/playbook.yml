@@ -34,15 +34,13 @@
         command: migrate
         project_path: "/home/{{ ansible_user }}/sites/{{ host }}"
         virtualenv: "/home/{{ ansible_user }}/sites/{{ host }}/venv"
-      tags:
-        migr
-      
+            
     - name: Add nginx config to sites-available
       template:
         src=./sites-available.j2
         dest=/etc/nginx/sites-available/{{ host }}
       notify:
-        - Restart nginx
+        - restart nginx
 
     - name: Add symlink in nginx sites-enabled
       file:
@@ -50,33 +48,27 @@
           dest=/etc/nginx/sites-enabled/{{ host }}
           state=link
       notify:
-        - Restart nginx
+        - restart nginx
 
     - name: write gunicorn service script
       template:
           src=./gunicorn.j2
           dest=/etc/systemd/system/gunicorn-{{ host }}.service
       notify:
-        - Restart gunicorn
+        - restart gunicorn
 
     - name: Collect static Files
       community.general.django_manage:
         command: collectstatic
         project_path: "/home/{{ ansible_user }}/sites/{{ host }}"
         virtualenv: "/home/{{ ansible_user }}/sites/{{ host }}/venv"
-      tags:
-        run
-
+      
 
     - name: Create .env file
       template:
           src=./dotenv.j2
           dest=/home/{{ ansible_user }}/sites/{{ host }}/.env
 
-    # - name: create DJANGO_SECRET_KEY to .env
-    #   set_fact:
-    #     password: "{{ lookup('password', '/dev/null') }}"
-    #     register: django_secret_key
 
     - name: Write DJANGO_SECRET_KEY to .env
       ansible.builtin.lineinfile:
@@ -84,10 +76,10 @@
         line: DJANGO_SECRET_KEY="{{ lookup('password', '/dev/null') }}"
 
   handlers:
-    - name: Restart nginx
+    - name: restart nginx
       service: name=nginx state=restarted
 
-    - name: Restart gunicorn
+    - name: restart gunicorn
       systemd:
         name=gunicorn-{{ host }}
         daemon_reload=yes
