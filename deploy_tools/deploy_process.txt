@@ -1,4 +1,8 @@
 
 #Command start ansible playbook:
 
-ansible-playbook -i inventory.ini playbook.yml 
+# ansible-playbook -i inventory.ini playbook.yml 
+
+# source ./venv/bin/activate 
+
+# ./venv/bin/gunicorn personal_blog.wsgi:application
