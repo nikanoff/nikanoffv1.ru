@@ -59,7 +59,7 @@
 
     - name: Collect static Files
       community.general.django_manage:
-        command: collectstatic
+        command: collectstatic --noinput
         project_path: "/home/{{ ansible_user }}/sites/{{ host }}"
         virtualenv: "/home/{{ ansible_user }}/sites/{{ host }}/venv"
       
