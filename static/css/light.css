@@ -1,0 +1,69 @@
+:root {
+    --color1: #f4f4f4
+}
+
+
+html {
+    background-color: var(--color1);    
+}
+
+
+body {
+    color: #333;
+    background-color: #e8e8e639;
+}
+
+/* Фон header'a */
+.header {
+    background-color: #e8e8e6;    
+  }
+  /* Фон header'a */
+
+
+/* Цвета логотипа и текста в header'e */
+.navbar-brand {
+    color: #191a1a;
+}
+
+.navbar-brand:hover {
+    color: #25B7D3;
+}
+/* Цвета логотипа и текста в header'e */
+
+
+/* Цвета для статей */
+.article {
+    background-color: #e8e8e656;    
+    color: #202222;           
+}
+
+.article1 {
+    background-color: #e8e8e656;    
+    color: #202222
+           
+}
+
+.article:hover{
+    background-color: #e8e8e6;    
+    color: #202222a3;     
+}
+
+.socials {  
+    overflow: hidden;
+    background-color: #e8e8e656;
+  
+}
+/* Цвета для статей */
+
+
+.footer {
+    background-color: #e8e8e6;
+    color: #999;
+    
+}
+
+.share-btn {
+    color: #007bff; /* Set text color */  
+    background-color: #e8e8e656;
+  }
+
