@@ -1,19 +1,28 @@
+:root {
+    --background_main: #191a1a;
+    --background_article: #1d1f21;
+    --text_color: #e8e8e6;
+    --text_color_2: #8d9191;
+
+
+}
+
 html {
-    background-color: #191a1a;
+    background-color: -;
         
 }
 
 
 body {
     color: #e8e8e6;
-    background-color: #191a1a;
+    background-color: var(--background_main);
 
 }
 
 
 /* Фон header'a */
 .header {
-  background-color: #202222;
+  background-color: var(--background_article);
   
 }
 /* Фон header'a */
@@ -26,21 +35,21 @@ body {
 }
 
 .navbar-brand:hover {
-    color: #25B7D3;
+    color: #1fb8cd;
 }
 /* Цвета логотипа и текста в header'e */
 
 
 /* Цвета для статей */
 .article {
-    background-color: #202222;    
-    color: #e8e8e6;
+    background-color: var(--background_article);    
+    color: #c5c8c6;
            
 }
 
 .article1 {
-    background-color: #202222;    
-    color: #e8e8e6;
+    background-color: var(--background_article);    
+    color: #c5c8c6;
            
 }
 
@@ -52,26 +61,23 @@ body {
 
 .socials {  
     overflow: hidden;
-    background-color: #202222b9;
+    background-color: var(--background_article);
+    color: var(--text_color_2);
   
 }
 /* Цвета для статей */
 
 .footer {
 
-    background-color: #202222;
-    color: #f4f4f4;
+    background-color: var(--background_article);
+    color: var(--text_color_2);
         
 }
 
-.share-btn {    
-    color: #e8e8e6; /* Set text color */
-    
-    
-}
+
 
 .share-btn {
-color: #e8e8e6; /* Set text color */  
+color: var(--text_color_2); /* Set text color */  
 background-color: #202222;
 }
 
