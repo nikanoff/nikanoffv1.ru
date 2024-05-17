@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="{% static 'css/' %}{{ theme }}.css" id="theme-link">
         <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
         <!-- <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script> -->
+        <script src="{% static 'css/ThemeState.js' %}" defer></script>
+        {% block opengraph %}{% endblock %}
     </head>
 
 
@@ -33,7 +35,7 @@
                 
             </div>
         </div>
-            
+        
         
         <div class="container article-box">              
             {% block content %}
@@ -48,37 +50,7 @@
             </div>
         </footer>
         
-        <script>
-            // Function to toggle between light and dark themes
-            function toggleTheme() {
-                const currentTheme = localStorage.getItem('theme') || 'light';
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-                // Update the theme
-                document.documentElement.setAttribute('data-theme', newTheme);
-            
-                // Update the theme-specific CSS file
-                const themeLink = document.getElementById('theme-link');
-                themeLink.href = `/static/css/${newTheme}.css`;
-            
-                // Update the theme toggle button text and icon
-                const themeToggleButton = document.getElementById('theme-toggle-button');
-                themeToggleButton.checked = newTheme === 'dark';
-                themeToggleButton.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
-            
-                // Store the theme preference in local storage
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            // Check for saved theme in local storage on page load
-            window.onload = function() {
-                const savedTheme = localStorage.getItem('theme') || 'light';
-                document.documentElement.setAttribute('data-theme', savedTheme);
-                document.getElementById('theme-link').href = `/static/css/${savedTheme}.css`;
-                document.getElementById('theme-toggle-button').checked = savedTheme === 'dark';
-                document.getElementById('theme-toggle-button').innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
-            };
-    
-        </script>
+        
+        <script src="{% static 'css/script_copy.js' %}"></script> 
     </body>
 </html>

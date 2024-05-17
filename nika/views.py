@@ -43,10 +43,12 @@ def article_page(request, slug):
         article.save()
         cache.set(cache_key, True, 360)  # Cache the view for 10 mins
 
-    view_count_text = get_view_count_text(article.view_count)    
+    view_count_text = get_view_count_text(article.view_count)
 
     context = {"article": article, "view_count_text": view_count_text}
     return render(request, "article_page.html", context)
+
+
 
 
 

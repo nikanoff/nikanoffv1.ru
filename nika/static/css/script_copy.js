@@ -1,3 +1,25 @@
+// Function to toggle between light and dark themes
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    // Update the theme
+    document.documentElement.setAttribute('data-theme', newTheme);
+
+    // Update the theme-specific CSS file
+    const themeLink = document.getElementById('theme-link');
+    themeLink.href = `/static/css/${newTheme}.css`;
+
+    // Update the theme toggle button text and icon
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    themeToggleButton.checked = newTheme === 'dark';
+    themeToggleButton.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
+
+    // Store the theme preference in local storage
+    localStorage.setItem('theme', newTheme);
+}
+
+
 function copyUrl(url, button) {
     navigator.clipboard.writeText(url)
         .then(() => {
@@ -20,3 +42,6 @@ function toggleShareState(button) {
         checkmarkIcon.style.display = 'none';
     }, 2000);
 }
+
+
+
