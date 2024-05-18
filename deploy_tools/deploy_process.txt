@@ -6,3 +6,9 @@
 # source ./venv/bin/activate 
 
 # ./venv/bin/gunicorn personal_blog.wsgi:application
+
+# sudo ssh root@89.104.68.130
+
+# sudo systemctl status gunicorn
+
+# cat ~./etc/systemd/system/gunicorn-nikanoff.ru.service
