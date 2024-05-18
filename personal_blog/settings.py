@@ -29,7 +29,7 @@ if "IS_DJANGO_DEBUG_FALSE" in os.environ:
     ALLOWED_HOSTS = [os.environ["SITENAME"]]
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     REAL_IP_HEADER = 'HTTP_X_REAL_IP'
-    SESSION_COOKIE_SECURE = True
+    
     
 else:
     SECRET_KEY = ["django-insecure-66=dw4_$(*jna4kpwo$%)3+$3g&_@xgcjp%cy)yaj+ni6((*fx"]
