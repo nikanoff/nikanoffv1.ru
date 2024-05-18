@@ -3,8 +3,6 @@ from .models import Article
 from django.shortcuts import get_object_or_404
 from django.core.cache import cache
 
-
-
 # Create your views here.
 
 # Метод для получения айпи
@@ -50,4 +48,11 @@ def article_page(request, slug):
 
     context = {"article": article, "view_count_text": view_count_text}
     return render(request, "article_page.html", context)
+
+
+
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)
+
+
 

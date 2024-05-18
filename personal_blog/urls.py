@@ -22,7 +22,7 @@ from nika import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
-    path('blog/<slug:slug>', views.article_page, name="article_page"),   
+    path('blog/<slug:slug>', views.article_page, name="article_page"),
 ]
 
-
+handler404 = views.custom_404_view
