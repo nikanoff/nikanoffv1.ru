@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if "IS_DJANGO_DEBUG_FALSE" in os.environ:
     DEBUG = True
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
-    ALLOWED_HOSTS = [os.environ["SITENAME"]]
+    # ALLOWED_HOSTS = [os.environ["SITENAME"]]
+    ALLOWED_HOSTS = ["*"]
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     # REAL_IP_HEADER = 'HTTP_X_REAL_IP'
     # SESSION_COOKIE_SECURE = True
