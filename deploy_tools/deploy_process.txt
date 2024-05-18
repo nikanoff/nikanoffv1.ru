@@ -12,3 +12,12 @@
 # sudo systemctl status gunicorn
 
 # cat ~./etc/systemd/system/gunicorn-nikanoff.ru.service
+
+# sudo systemctl status nginx
+
+# sudo systemctl reload nginx
+# sudo systemctl start nginx
+
+# cd /home/nika/sites/nikanoff.ru
+
+# netstat -ntlp | grep LISTEN
