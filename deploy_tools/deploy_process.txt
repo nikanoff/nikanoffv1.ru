@@ -9,7 +9,7 @@
 
 # sudo ssh root@89.104.68.130
 
-# sudo systemctl status gunicorn
+# systemctl status gunicorn-nikanoff.ru
 
 # cat ~./etc/systemd/system/gunicorn-nikanoff.ru.service
 
@@ -21,3 +21,8 @@
 # cd /home/nika/sites/nikanoff.ru
 
 # netstat -ntlp | grep LISTEN
+
+# ps ax|grep gunicorn
+
+
+# proxy_set_header X-Real-IP $remote_addr;
