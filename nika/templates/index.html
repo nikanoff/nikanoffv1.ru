@@ -10,7 +10,7 @@
                 {% for article in articles %}
                     <a class="article" href="{{ article.get_absolute_url }}">
                         <h2 class="article-title">{{article.title }}</h2>
-                        <p class="article-summary">{{ article.summary }}</p>
+                        <p class="article-summary">{{ article.summary | truncatewords:50 }}</p>
                     </a>
                     <div class="socials">{{ article.view_count_text }} | {{ article.pubdate }}                  
                         <button class="share-btn" onclick="copyUrl('{{ request.build_absolute_uri  }}{{ article.get_absolute_url }}', this)">

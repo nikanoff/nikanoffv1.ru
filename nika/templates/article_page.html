@@ -6,7 +6,7 @@
 
 {% block opengraph %}
     <meta property="og:title" content="{{ article.title | safe }}"/>
-    <meta property="og:description" content="{{ article.summary }}"/>
+    <meta property="og:description" content="{{ article.summary | safe }}"/>
     <meta property="og:image" content="{% static 'img/avatar.jpg' %}"/>
     <meta property="og:type" content="blog"/>
     <meta property="og:url" content= "{{ request.build_absolute_uri }}"/>
