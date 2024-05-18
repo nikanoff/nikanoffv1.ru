@@ -34,3 +34,5 @@
 # systemctl reload gunicorn-nikanoff.ru.service
 
 # proxy_set_header X-Forwarded-Proto $scheme;
+
+# Restart=on-failure

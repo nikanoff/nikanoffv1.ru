@@ -2,7 +2,7 @@
 Description=Gunicorn server for {{ host }}
 
 [Service]
-Restart=on-failure
+Restart=always
 User=root
 WorkingDirectory=/home/{{ ansible_user }}/sites/{{ host }}
 EnvironmentFile=/home/{{ ansible_user }}/sites/{{ host }}/.env
