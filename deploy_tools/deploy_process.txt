@@ -26,3 +26,8 @@
 
 
 # proxy_set_header X-Real-IP $remote_addr;
+
+# if first time:
+systemctl daemon-reload
+systemctl enable gunicorn-nikanoff.ru.service
+systemctl start gunicorn-nikanoff.ru.service
