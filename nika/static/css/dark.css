@@ -1,11 +1,19 @@
-:root {
+/* :root {
     --background_main: #191a1a;
     --background_article: #1d1f21;
     --text_color: #e8e8e6;
     --text_color_2: #8d9191;
 
+} */
+
+:root {
+    --background_main: #1d1f21;
+    --background_article: #292c2f;
+    --text_color: #e8e8e6;
+    --text_color_2: #8d9191;
 
 }
+
 
 html {
     background-color: var(--background_main);
@@ -43,7 +51,7 @@ body {
 /* Цвета для статей */
 .article {
     background-color: var(--background_article);    
-    color: #c5c8c6;
+    color: var(--text_color);
            
 }
 
@@ -78,7 +86,7 @@ body {
 
 .share-btn {
 color: var(--text_color_2); /* Set text color */  
-background-color: #202222;
+background-color: var(--background_article);
 }
 
 .share-btn:hover {
