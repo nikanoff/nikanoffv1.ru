@@ -47,4 +47,8 @@ server {
 	location /static {
 		alias /home/{{ansible_user}}/sites/{{ host }}/static;
 	}
+
+    location /media/  {
+        alias /home/{{ansible_user}}/sites/{{ host }}/media/;   
+    }
 }
