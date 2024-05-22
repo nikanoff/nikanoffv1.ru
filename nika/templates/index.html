@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 
+
+
 {% block title %}Сайт Марата Никанова{% endblock %}
 
 {% block content %}
     <div class="row justify-content-center">
-        <div class="col-xs-12 col-md-10 col-lg-8">
-            <div class="article-list">
-                <p>{{ ip }}</p>
+        <div class="col-xs-10 col-md-8 col-lg-6">
+            <div class="article-list">                
                 {% for article in articles %}
                     <a class="article" href="{{ article.get_absolute_url }}">
-                        <h2 class="article-title">{{article.title }}</h2>
+                        <h2 class="article-title">{{article.title | safe }}</h2>
                         <p class="article-summary">{{ article.summary | truncatewords:50 }}</p>
+                        <div class="media">
+                            <img src="{{ MEDIA_URL }}{{ article.og_image }}" alt="">
+                        </div> 
                     </a>
                     <div class="socials">{{ article.view_count_text }} | {{ article.pubdate }}                  
                         <button class="share-btn" onclick="copyUrl('https://nikanoff.ru{{ article.get_absolute_url }}', this)">
@@ -25,3 +29,5 @@
         </div>
     </div>
 {% endblock %}
+
+
