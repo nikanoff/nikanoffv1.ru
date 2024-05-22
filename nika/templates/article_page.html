@@ -15,6 +15,18 @@
     <meta property="og:author" content= "Марат Никанов"/>
 {% endblock %}
 
+
+<meta name="twitter:card" content="blog">
+<meta property="twitter:domain" content="{{ request.get_host }}">
+<meta property="twitter:url" content="{{ request.build_absolute_uri }}">
+<meta name="twitter:title" content="{{ article.title | safe }}">
+<meta name="twitter:description" content="{{ article.summary | safe }}">
+<meta name="twitter:image" content="https://nikanoff.ru/images/hiro.jpeg">
+
+
+
+
+
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-xs-10 col-md-8 col-lg-6">

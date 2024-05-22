@@ -14,7 +14,7 @@
                         <h2 class="article-title">{{article.title | safe }}</h2>
                         <p class="article-summary">{{ article.summary | truncatewords:50 }}</p>
                         <div class="media">
-                            <img src="{{ MEDIA_URL }}{{ article.og_image }}" alt="">
+                            <img src="media/{{ article.og_image }}" alt="">
                         </div> 
                     </a>
                     <div class="socials">{{ article.view_count_text }} | {{ article.pubdate }}                  
