@@ -10,8 +10,9 @@
 <meta property="twitter:url" content="{{ request.build_absolute_uri }}">
 <meta name="twitter:title" content="{{ article.title | safe }}">
 <meta name="twitter:description" content="{{ article.summary | safe }}">
+{% if article.og_image %}
 <meta name="twitter:image" content="https://{{ request.get_host }}{{article.og_image.url}}">
-
+{% endif %}
 {% endblock %}
 
 
@@ -35,6 +36,13 @@
         <div class="article1">            
             <h1 class="article-title">{{ article.title }}</h1>
             <p class="article-text">{{ article.full_text | safe }}</p>
+        </div>
+        <div class="socials">{{ view_count_text }} | {{ article.pubdate }}                  
+            <button class="share-btn" onclick="copyUrl('https://nikanoff.ru{{ article.get_absolute_url }}', this)">
+                <img class="share" src="{% static 'img/share-icon.png' %}" alt="Share">
+                <img class="checkmark" src="{% static 'img/checkmark-icon.png' %}" alt="Checkmark">
+                <span>Share</span>
+            </button>                        
         </div>
     </div>
 </div>

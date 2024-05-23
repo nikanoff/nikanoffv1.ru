@@ -19,7 +19,7 @@ body {
 .header {
   display: flex;
   height: 60px;
-  align-content: center;
+  /* align-content: center; */
   justify-content: space-between;
   border-radius: 15px;
 }
@@ -49,13 +49,14 @@ label {
   width:30px;
   height:15px;
   position: relative;
-  display: block;
+  /* display: block; */
   background: #ebebeb;
   border-radius: 20px;
   box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
   cursor: pointer;
   align-self: center;  
   transition: 0.3s;
+  
 }
 
 
@@ -167,7 +168,7 @@ label:active:after{
 
 .socials {  
   display: flex;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   border-radius: 10px;
   padding-top: 5px;
   padding-bottom: 5px;

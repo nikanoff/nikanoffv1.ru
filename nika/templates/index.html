@@ -13,9 +13,11 @@
                     <a class="article" href="{{ article.get_absolute_url }}">
                         <h2 class="article-title">{{article.title | safe }}</h2>
                         <p class="article-summary">{{ article.summary | truncatewords:50 }}</p>
+                        {% if article.og_image %}
                         <div class="media">
                             <img src="media/{{ article.og_image }}" alt="">
-                        </div> 
+                        </div>
+                        {% endif %}
                     </a>
                     <div class="socials">{{ article.view_count_text }} | {{ article.pubdate }}                  
                         <button class="share-btn" onclick="copyUrl('https://nikanoff.ru{{ article.get_absolute_url }}', this)">
