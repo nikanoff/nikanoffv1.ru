@@ -13,11 +13,11 @@
         <link type="text/css" rel="stylesheet" href="{% static 'css/' %}{{ theme }}.css" id="theme-link">
         <link  rel="shortcut icon" type="image/ico" href="{% static 'img/favicon.ico' %}">
         <script src="{% static 'css/ThemeState.js' %}" type="text/javascript" defer></script>
-        
+        <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     </head>
 
 
-    <body>
+    <body id="homehx">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="header col-xs-10 col-md-8 col-lg-6">                    
@@ -39,7 +39,8 @@
         </div>
         
                 
-        <div class="container article-box">              
+        <div class="container article-box" id="response-div">              
+            
             {% block content %}
             {% endblock %}
 
